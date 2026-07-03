@@ -1,26 +1,40 @@
+/* src/app/globals.css */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  /* Extending standard theme metrics natively in v4 CSS */
+  --color-background: #090a0f;
+  --color-foreground: #f8fafc;
+  
+  /* Custom brand design gradients */
+  --color-brand-matte: #090a0f;
+  --color-panel-glass: rgba(15, 23, 42, 0.65);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-foreground);
+  background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #090a0f 70%);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom design primitives utilizing v4 color utility helpers */
+@utility glass-panel {
+  background: var(--color-panel-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@utility glass-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@utility glass-input-focus {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: #818cf8;
+  box-shadow: 0 0 20px rgba(129, 140, 248, 0.15);
 }
