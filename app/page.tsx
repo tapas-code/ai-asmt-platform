@@ -20,7 +20,7 @@ export default function Home() {
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:8000/api/assessments/generate', {
+      const response = await fetch('https://ai-asmt-platform-api.tapas-dev.workers.dev/api/assessments/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt }),
