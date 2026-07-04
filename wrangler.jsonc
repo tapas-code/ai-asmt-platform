@@ -1,5 +1,5 @@
 {
-  "name": "ai-asmt-frontend",
+  "name": "ai-asmt-platform",
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-07-03",
   "compatibility_flags": [
